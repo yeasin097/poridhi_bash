@@ -1,4 +1,4 @@
-# Bash Commands Tutorial
+# Bash File Management
 
 Before we begin, we must clear two concepts: **directory** and **path**, to understand Bash commands better.
 
