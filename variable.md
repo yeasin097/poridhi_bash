@@ -21,7 +21,6 @@ poridhi@ubuntu:~$ NAME="poridhi.io"
 poridhi@ubuntu:~$ YEAR=2025
 ```
 
----
 
 ### 2. Accessing Variables
 To use a variable, prefix its name with a `$`.
@@ -34,17 +33,12 @@ $VARIABLE_NAME
 #### Example:
 ```bash
 poridhi@ubuntu:~$ echo $NAME
+poridhi.io
 poridhi@ubuntu:~$ echo "I am learning from $NAME."
+I am learning from poridhi.io.
 poridhi@ubuntu:~$ echo "I started learning from $YEAR"
+I started learning from 2025.
 ```
-Output:
-```
-poridhi@ubuntu:~$ poridhi.io
-poridhi@ubuntu:~$ I am learning from poridhi.io.
-poridhi@ubuntu:~$ I started learning from 2025.
-```
-
----
 
 ### 3. Types of Variables
 
@@ -62,6 +56,8 @@ local_example
 # This will not work outside the function
 echo $LOCAL_VAR
 ```
+#### Ouput:
+
 
 #### b. Environment Variables
 - Available to the script and its child processes.
@@ -69,15 +65,16 @@ echo $LOCAL_VAR
 
 #### Example:
 ```bash
-export ENV_VAR="Environment Value"
-echo $ENV_VAR
+poridhi@ubuntu:~$ export ENV_VAR="Environment Value"
+poridhi@ubuntu:~$ echo $ENV_VAR
+Environment Value
 ```
 
 #### c. Special Variables
 Bash provides special variables with predefined meanings:
 
 | Variable | Description |
-|----------|-------------|
+--|
 | `$0`     | Name of the script |
 | `$1, $2, ...` | Positional arguments passed to the script |
 | `$#`     | Number of positional arguments |
@@ -104,7 +101,6 @@ First Argument: arg1
 Number of Arguments: 2
 ```
 
----
 
 ### 4. Assigning Command Output to Variables
 You can store the output of a command in a variable using command substitution.
@@ -124,7 +120,6 @@ Output:
 Today is Mon Jan 27 12:34:56 UTC 2025
 ```
 
----
 
 ### 5. Read-Only Variables
 To make a variable immutable, use the `readonly` keyword.
@@ -135,7 +130,6 @@ readonly PI=3.14159
 PI=3.14 # This will throw an error
 ```
 
----
 
 ### 6. Unsetting Variables
 You can remove a variable using the `unset` command. Note that readonly variables cannot be unset.
@@ -147,37 +141,43 @@ unset VARIABLE_NAME
 
 #### Example:
 ```bash
-NAME="Temporary"
-unset NAME
-echo $NAME # This will be empty
+poridhi@ubuntu:~$ NAME="Temporary"
+poridhi@ubuntu:~$ echo $NAME
+Temporary
+poridhi@ubuntu:~$ unset NAME
+poridhi@ubuntu:~$ echo $NAME # This will be empty
+
 ```
 
----
 
 ### 7. Arrays in Bash Variables
 Bash supports arrays to store multiple values.
 
 #### Declaring an Array:
 ```bash
-ARRAY_NAME=(value1 value2 value3)
+poridhi@ubuntu:~$ ARRAY_NAME=(value1 value2 value3)
 ```
 
 #### Accessing Array Elements:
 ```bash
-echo ${ARRAY_NAME[0]} # First element
-echo ${ARRAY_NAME[@]} # All elements
+poridhi@ubuntu:~$ echo ${ARRAY_NAME[0]} # First element
+poridhi@ubuntu:~$ echo ${ARRAY_NAME[@]} # All elements
 ```
 
 #### Example:
 ```bash
-COLORS=(red green blue)
-echo "First color: ${COLORS[0]}"
-echo "All colors: ${COLORS[@]}"
-COLORS[3]=yellow
-echo "Updated colors: ${COLORS[@]}"
+poridhi@ubuntu:~$ COLORS=(red green blue)
+poridhi@ubuntu:~$ echo ${COLORS[0]}
+red
+poridhi@ubuntu:~$ echo "First color: ${COLORS[0]}"
+First color: red
+poridhi@ubuntu:~$ echo "All colors: ${COLORS[@]}"
+red green blue
+poridhi@ubuntu:~$ COLORS[3]=yellow
+poridhi@ubuntu:~$ echo "Updated colors: ${COLORS[@]}"
+Updated colors: red green blue yellow
 ```
 
----
 
 ### 8. Variable Scope
 
@@ -199,7 +199,6 @@ echo $GLOBAL_VAR # Accessible
 echo $LOCAL_VAR  # Not accessible
 ```
 
----
 
 ### 9. Best Practices
 
