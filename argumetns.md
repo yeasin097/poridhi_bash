@@ -1,6 +1,6 @@
 # Bash Script Arguments
 
-## Introduction
+## What is arguments?
 In Bash, arguments allow scripts to process input from the command line, making them dynamic and versatile. This guide will teach you how to create scripts and handle arguments effectively.
 
 ---
